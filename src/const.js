@@ -1,6 +1,10 @@
 export const SCREEN_WIDTH = 512;
 export const SCREEN_HEIGHT = 448;
 
+export const OFFSETX = 32; //主遊戲區的 X 偏移量
+export const OFFSETY = 16;//主遊戲區的 Y 偏移量
+export const TILESIZE = 16;	//地圖塊的大小
+
 // 圖片資源
 export const MENU_BG = new Image();
 MENU_BG.src = require('../src/assets/menu.gif');
