@@ -8,6 +8,8 @@ import {
 }
 from "@/const";
 
+import {tankMapCollision} from '../collision';
+
 const offsetX = 32; //主遊戲區的 X 偏移量
 const offsetY = 16;//主遊戲區的 Y 偏移量
 const mapWidth = 416; // 主遊戲區寬度
@@ -85,7 +87,14 @@ Tank.prototype.isHit = function() {
 				this.y = offsetY + mapHeight - this.size;
 				this.hit = true;
 			}
-		}
+        }
+        
+        if (!this.hit) {
+            if(tankMapCollision(this)){
+                this.hit = true;
+            }
+        }
+
 }
 
 export function TankPointer () {
